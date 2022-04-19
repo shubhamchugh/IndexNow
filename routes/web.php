@@ -5,7 +5,6 @@ use App\Http\Controllers\DomainController;
 use App\Http\Controllers\IndexingController;
 use App\Http\Controllers\LanguageController;
 use App\Http\Controllers\ChecklistController;
-use App\Http\Controllers\StaterkitController;
 use App\Http\Controllers\ImportChecklistController;
 
 /*
@@ -18,7 +17,8 @@ use App\Http\Controllers\ImportChecklistController;
 | contains the "web" middleware group. Now create something great!
 |
  */
-Route::get('/', [StaterkitController::class, 'layout_blank'])->name('layout-blank');
+// Route::get('/', [StaterkitController::class, 'layout_blank'])->name('layout-blank');
+Route::resource('/', DomainController::class)->names('domain');
 Route::get('instant-index', [IndexingController::class, 'InstantIndex'])->name('instant.index');
 Route::resource('domain', DomainController::class)->names('domain');
 Route::get('checklist/import', [ImportChecklistController::class, 'importIndex'])->name('checklist.import');

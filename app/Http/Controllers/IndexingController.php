@@ -28,6 +28,13 @@ class IndexingController extends Controller
         $google_json_path = 'app/public/google_json/' . $domain_details['google_json'];
 
         try {
+            $google_json_path_content = file_get_contents(storage_path($google_json_path));
+        } catch (\Throwable $th) {
+            //throw $th;
+            die('Please Add Google json file');
+        }
+
+        try {
             $googleClient = new Google\Client();
 
             // Add here location to the JSON key file that you created and downloaded earlier.
