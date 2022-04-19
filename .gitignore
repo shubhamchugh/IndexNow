@@ -16,3 +16,5 @@ yarn-error.log
 /storage/Google_account_file.json
 /public/sitemap.xml
 /public/sitemap-*.xml
+/logs/*
+/storage/app/public/google_json/*
