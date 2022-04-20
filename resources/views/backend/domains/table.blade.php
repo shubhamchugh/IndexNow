@@ -5,6 +5,7 @@
                 <th>No.</th>
                 <th>Domain_id</th>
                 <th>Domain</th>
+                <th>Slug Count</th>
                 <th>google_json</th>
                 <th>bing_api</th>
                 <th>Actions</th>
@@ -19,6 +20,9 @@
                 </td>
                 <td>
                     <span class="font-weight-bold">{{ $domain->domain }}</span>
+                </td>
+                <td>
+                    {{ $domain->slugList->count() }}
                 </td>
                 <td>{{ $domain->google_json }}</td>
 

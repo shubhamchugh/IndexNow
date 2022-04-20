@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Domain;
+use App\Models\Checklist;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use App\Http\Requests\StoreDomainRequest;
@@ -22,13 +23,15 @@ class DomainController extends Controller
             ['link' => "/", 'name' => "Home"], ['link' => "/", 'name' => "Page"], ['name' => "Test Page"],
         ];
 
-        $domains      = Domain::paginate($this->limit);
-        $domainsCount = Domain::count();
+        $domains        = Domain::with("slugList")->paginate($this->limit);
+        $domainsCount   = Domain::count();
+        $checklistCount = Checklist::count();
 
         return view("backend.domains.index", [
-            'breadcrumbs'  => $breadcrumbs,
-            'domains'      => $domains,
-            'domainsCount' => $domainsCount,
+            'breadcrumbs'    => $breadcrumbs,
+            'domains'        => $domains,
+            'domainsCount'   => $domainsCount,
+            'checklistCount' => $checklistCount,
         ]);
     }
 

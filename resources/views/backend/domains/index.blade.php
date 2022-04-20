@@ -9,10 +9,10 @@
     <div class="card">
         <div class="card-header">
             <a class="btn btn-primary " href="{{ route('domain.index') }}">
-                All domains list
+                All domains list ({{ $domainsCount }})
             </a>
             <a class="btn btn-primary" href="{{ route('checklist.index') }}">
-                All slug list
+                All slug list ({{ $checklistCount }})
             </a>
             <a class="btn btn-primary" href="{{ route('domain.create') }}">
                 Add Domain

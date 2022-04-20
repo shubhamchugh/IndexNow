@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Domain;
 use App\Models\Checklist;
 use GuzzleHttp\Psr7\Request;
 use App\Http\Requests\StoreChecklistRequest;
@@ -22,11 +23,13 @@ class ChecklistController extends Controller
         ];
 
         $checklists     = Checklist::paginate($this->limit);
+        $domainsCount   = Domain::count();
         $checklistCount = Checklist::count();
 
         return view("backend.checklist.index", [
             'breadcrumbs'    => $breadcrumbs,
             'checklists'     => $checklists,
+            'domainsCount'   => $domainsCount,
             'checklistCount' => $checklistCount,
         ]);
     }
