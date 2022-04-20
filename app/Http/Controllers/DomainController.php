@@ -23,7 +23,8 @@ class DomainController extends Controller
             ['link' => "/", 'name' => "Home"], ['link' => "/", 'name' => "Page"], ['name' => "Test Page"],
         ];
 
-        $domains        = Domain::with("slugList")->paginate($this->limit);
+        $domains = Domain::withCount("slugList")->paginate($this->limit);
+
         $domainsCount   = Domain::count();
         $checklistCount = Checklist::count();
 

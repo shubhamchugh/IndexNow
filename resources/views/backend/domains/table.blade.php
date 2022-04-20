@@ -22,7 +22,7 @@
                     <span class="font-weight-bold">{{ $domain->domain }}</span>
                 </td>
                 <td>
-                    {{ $domain->slugList->count() }}
+                    {{ $domain->slug_list_count }}
                 </td>
                 <td>{{ $domain->google_json }}</td>
 

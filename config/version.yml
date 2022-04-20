@@ -4,10 +4,10 @@ current:
   label: v
   major: 1
   minor: 0
-  patch: 2
+  patch: 3
   prerelease: null
   buildmetadata: null
-  commit: c017bb
+  commit: dbf325
   timestamp:
     year: 2022
     month: 4
